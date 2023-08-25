@@ -64,14 +64,6 @@ header {
     padding: 0px 20px;
 }
 
-.nav_links li a{
-    transition: all 0.3s ease 0s;
-}
-
-.nav_links li a:hover{
-    color: #ff9800;
-}
-
 .nav_bar {
     display: none;
 }
@@ -273,6 +265,32 @@ button img {
 
 
 /* Delivery */
+
+.nav_links_deliver li a{
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links_deliver li a:hover{
+    color: #ff9800;
+}
+
+.nav_links_delivery {
+    list-style: none;
+}
+
+.nav_links_delivery li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav_links_delivery li a{
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links_delivery li a:hover{
+    color: #ff9800;
+}
+
 .delivery {
     background-color: #d0d0d061;
     display: flex;
@@ -350,11 +368,6 @@ button img {
     border-bottom: 1px solid #ddd;
 }
 
-.cart-item .item-name {
-    flex-grow: 1;
-    margin-right: 10px;
-}
-
 .cart-item .remove-item {
     background: none;
     border: none;
@@ -389,12 +402,8 @@ button img {
 
 
 /* MOBILE */
-@media (max-width: 600px) {
 
-    .block {
-        padding: 2% 5%;
-    }
-
+@media (max-width: 1140px) {
     header {
         display: flex;
         position: sticky;
@@ -411,7 +420,6 @@ button img {
         padding: 15px;
     }
     
-    
     .close {
         display: block;
     }
@@ -423,29 +431,16 @@ button img {
     .logo {
         width: 13rem; 
         padding: 10px 15px;
+        margin: auto;
     }
-
-    .nav_links {
-        display: none;
-    }
-    
 
     .cart {
         display: none;
     }
 
-    .banner {
-        grid-template-columns: repeat(1, 1fr);
+    .nav_links {
+        display: none;
     }
-
-    .banner1 {
-        padding: 5px 0;
-    }
-
-    .banners {
-        padding: 10px 0;
-    }
-
 
     .menu {
         display: none; /* Initially hide the menu */
@@ -473,7 +468,39 @@ button img {
         background-color: #f0f0f0;
     }
 
+}
 
-    /* Cart menu styles */
+
+@media (max-width: 600px) {
+
+    .block {
+        padding: 2% 5%;
+    }
+
+    .logo {
+        margin-left: 0; 
+    }
+
+    .banner {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .banner1 {
+        padding: 5px 0;
+    }
+
+    .banners {
+        padding: 10px 0;
+    }
+
+    .nav_links_delivery {
+        display: none;
+    }
     
+}
+
+@media (max-width: 856px) {
+    .card {
+        max-width: 200px;
+    }
 }
