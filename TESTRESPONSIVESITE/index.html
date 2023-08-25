@@ -17,8 +17,45 @@
                     <li><a href="#">CONTACT</a></li>
                 </ul>
             </nav>
+            <div class="menu hidden" id="menu">
+                <a href="#">HOME</a>
+                <a href="#">MENU</a>
+                <a href="#">ABOUT</a>
+                <a href="#">CONTACT</a>
+                <a href="#" class="cart-button"><img src="./img/cart.png"></a>
+            </div>
             <a class="cart" href="#"><img src="./img/cart.png"></a>
+            <div class="menu-toggle">
+                <div class="nav_bar" id="nav_bar">
+                    <img src="./img/menu-mobile.png" alt="menu">
+                </div>
+                <div class="close hidden" id="close">
+                    <img src="./img/iconizer-Close.svg" alt="menu">
+                </div>
+            </div>            
         </header>
+        <div class="cart-menu hidden" id="cart-menu">
+            <div class="cart-header">
+                <h2>Shopping Cart</h2>
+                <button id="close-cart">&times;</button>
+            </div>
+            <div class="cart-items">
+                <!-- Here, you can dynamically add your cart items using JavaScript -->
+                <!-- Example item -->
+                <div class="cart-item">
+                    <span class="item-name">Burger Name</span>
+                    <span class="item-price">$10.99</span>
+                    <button class="remove-item">Remove</button>
+                </div>
+            </div>
+            <div class="cart-total">
+                Total: $50.45 <!-- Example total amount, you can update this using JavaScript -->
+            </div>
+            <div class="cart-buttons">
+                <button class="continue-shopping">Continue Shopping</button>
+                <button class="checkout">Checkout</button>
+            </div>
+        </div>
         <section class="delivery">
             <img class="deliveryimage" src="./img/output-onlinepngtools.png" alt="delivery-icon">
             <div>
@@ -86,6 +123,8 @@
                 </div>
             </section>
         </main>
+        <script src="./index.js"></script>
     </body>
 </html>
+
 

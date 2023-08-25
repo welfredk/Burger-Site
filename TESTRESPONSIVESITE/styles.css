@@ -48,6 +48,7 @@ header {
     z-index: 100;
 }
 
+
 .logo {
     cursor: pointer;
     width: 150px;
@@ -71,6 +72,14 @@ header {
     color: #ff9800;
 }
 
+.nav_bar {
+    display: none;
+}
+
+.close {
+    display: none;
+}
+
 button img {
     display: inline-block; 
 }
@@ -79,7 +88,7 @@ button img {
 .cart img {
     margin-left: 20px;
     padding: 9px 9px;
-    background-color: rgba(255, 152, 0, 1);
+    background-color: rgb(255, 255, 255);
     border: none;
     border-radius: 15px;
     cursor: pointer;
@@ -104,54 +113,47 @@ button img {
 /* MAIN DISH PAGE */
 
 
-/* .maindish {
-    display: grid;
-    row-gap: .5rem;
-} */
-
-.home {
-
-}
 
 .home__container {
     display: flex;
     flex-direction: column;
     padding: 2% 15%;
+    overflow-x: hidden;
 }
 
-.home__images {
-
-}
-
-.home__images img {
-
-}
-
-.home__content {
-
-}
 
 .maindishimg {
-    justify-self: flex-end;
+    max-width: 100%;
+    position: relative;
+    left: 80px;
 }
 
 
 .main-subtitle {
-    max-width: clamp(200px, 8vw, 480px);
+    max-width: 20rem;
+    position: relative;
+    top: 100px;
+    right: 45px;
 }
 
 .word {
     font-family: "AlfaSlabOne";
-    font-size: clamp(14px, 5vw, 980px);
+    font-size: 3rem;
     color: #4b2f25;
+    position: relative;
+    top: 100px;
+    right: 45px;
+    z-index: 1;
 }
 
 .word2 {
     font-family: "AlfaSlabOne";
-    font-size: clamp(14px, 3.5vw, 980px);
+    font-size: 2rem;
     color: #4b2f25;
     position: relative;
-    top: -10px;
+    top: 90px;
+    right: 45px;
+    z-index: 1;
 }
 
 /* BANNER PAGE */
@@ -302,6 +304,90 @@ button img {
     font-family: "BebasNeue";
 }
 
+.cart-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    overflow-y: auto;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+#close-cart {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.cart-items {
+    padding: 10px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item .item-name {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.cart-item .remove-item {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+}
+
+.cart-total {
+    padding: 10px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.cart-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.cart-buttons button {
+    background-color: #ff9800;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.cart-buttons button:hover {
+    background-color: #e64a19;
+}
+
+
 /* MOBILE */
 @media (max-width: 600px) {
 
@@ -310,10 +396,9 @@ button img {
     }
 
     header {
-        display: grid;
-        justify-content: center;
-        align-items: center;
+        display: flex;
         position: sticky;
+        justify-content: center;
         top: 0;
         border-bottom: 0.5px solid #80808036;
         background-color: white;
@@ -321,21 +406,32 @@ button img {
         padding: 10px 0; 
     }
 
+    .nav_bar {
+        display: block;
+        padding: 15px;
+    }
+    
+    
+    .close {
+        display: block;
+    }
+    
+    .hidden {
+        display: none;
+    }
+
     .logo {
-        width: 80%; 
-        margin-right: 0; 
+        width: 13rem; 
+        padding: 10px 15px;
     }
 
     .nav_links {
         display: none;
     }
+    
 
     .cart {
         display: none;
-    }
-
-    .maindish {
-        grid-template-columns: repeat(1, 1fr);
     }
 
     .banner {
@@ -350,4 +446,34 @@ button img {
         padding: 10px 0;
     }
 
+
+    .menu {
+        display: none; /* Initially hide the menu */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Position below the header */
+        right: 0;
+        background-color: #efefef;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        z-index: 1;
+        width: 100%; /* Make the menu full-width */
+    }
+    
+    .menu a {
+        text-decoration: none;
+        color: #333;
+        padding: 10px 0; /* Adjust the horizontal padding as needed */
+        text-align: center;
+        width: 100%; /* Make the links full-width */
+        border-bottom: 1px dashed;
+    }
+    
+    .menu a:hover {
+        background-color: #f0f0f0;
+    }
+
+
+    /* Cart menu styles */
+    
 }
