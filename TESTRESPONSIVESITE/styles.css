@@ -18,23 +18,34 @@
     src: url(./fonts/Montserrat-Regular.ttf);
 }
 
+@font-face {
+    font-family: AlfaSlabOne;
+    src: url(./fonts/AlfaSlabOne-Regular.ttf);
+}
+
+@font-face {
+    font-family: BebasNeueBold;
+    src: url(./fonts/BebasNeue\ Bold.ttf);
+}
+
+@font-face {
+    font-family: BebasNeue;
+    src: url(./fonts/BebasNeue-Regular.otf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(./fonts/Montserrat-Regular.ttf);
+}
+
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-
-
-/*NAV BAR*/
-li, a {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 0.9em;
-    color: black;
-    text-decoration: none;
-}
-
+/* Header Section */
 header {
     display: flex;
     justify-content: flex-end;
@@ -48,7 +59,6 @@ header {
     z-index: 100;
 }
 
-
 .logo {
     cursor: pointer;
     width: 150px;
@@ -59,9 +69,22 @@ header {
     list-style: none;
 }
 
-.nav_links li{
+.nav_links li {
     display: inline-block;
     padding: 0px 20px;
+}
+
+.nav_links li a {
+    transition: all 0.3s ease 0s;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 0.9em;
+    color: black;
+    text-decoration: none;
+}
+
+.nav_links li a:hover {
+    color: #ff9800;
 }
 
 .nav_bar {
@@ -73,9 +96,8 @@ header {
 }
 
 button img {
-    display: inline-block; 
+    display: inline-block;
 }
-
 
 .cart img {
     margin-left: 20px;
@@ -92,20 +114,15 @@ button img {
     background-color: rgba(255, 152, 0, 0.8);
 }
 
-/* PAGES */
-.block { 
+/* Pages */
+.block {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2% 15%;
 }
 
-
-
-/* MAIN DISH PAGE */
-
-
-
+/* Main Dish Page */
 .home__container {
     display: flex;
     flex-direction: column;
@@ -113,42 +130,45 @@ button img {
     overflow-x: hidden;
 }
 
-
-.maindishimg {
-    max-width: 100%;
+.maindish {
     position: relative;
-    left: 80px;
+    height: 25rem;
 }
 
+.maindishimg {
+    width: 70%;
+    max-width: 35rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0.5%;
+}
 
 .main-subtitle {
-    max-width: 20rem;
-    position: relative;
-    top: 100px;
-    right: 45px;
+    width: 40%;
+    max-width: 26rem;
+    position: absolute;
+    top: 40px;
 }
 
 .word {
     font-family: "AlfaSlabOne";
-    font-size: 3rem;
+    font-size: 550%;
     color: #4b2f25;
-    position: relative;
-    top: 100px;
-    right: 45px;
     z-index: 1;
+    position: absolute;
+    top: 80px;
 }
 
 .word2 {
     font-family: "AlfaSlabOne";
-    font-size: 2rem;
+    font-size: 4rem;
     color: #4b2f25;
-    position: relative;
-    top: 90px;
-    right: 45px;
     z-index: 1;
+    position: absolute;
+    top: 170px;
 }
 
-/* BANNER PAGE */
+/* Banner Page */
 .banner {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -160,7 +180,7 @@ button img {
 
 .banner1 {
     width: 100%;
-    padding: 10px 10px ;
+    padding: 10px 10px;
     cursor: pointer;
 }
 
@@ -170,7 +190,6 @@ button img {
     cursor: pointer;
 }
 
-
 .banner div:nth-child(2) {
     display: flex;
     flex-wrap: wrap;
@@ -178,9 +197,7 @@ button img {
     justify-content: flex-end;
 }
 
-
-/* ORDER */
-
+/* Orders Section */
 .orders {
     background-color: #8080800a;
 }
@@ -219,7 +236,6 @@ button img {
     margin-bottom: 10px;
     text-align: center;
 }
-
 
 .card {
     max-width: 300px;
@@ -263,14 +279,12 @@ button img {
     cursor: pointer;
 }
 
-
-/* Delivery */
-
-.nav_links_deliver li a{
+/* Delivery Section */
+.nav_links_deliver li a {
     transition: all 0.3s ease 0s;
 }
 
-.nav_links_deliver li a:hover{
+.nav_links_deliver li a:hover {
     color: #ff9800;
 }
 
@@ -278,16 +292,16 @@ button img {
     list-style: none;
 }
 
-.nav_links_delivery li{
+.nav_links_delivery li {
     display: inline-block;
     padding: 0px 20px;
 }
 
-.nav_links_delivery li a{
+.nav_links_delivery li a {
     transition: all 0.3s ease 0s;
 }
 
-.nav_links_delivery li a:hover{
+.nav_links_delivery li a:hover {
     color: #ff9800;
 }
 
@@ -314,14 +328,17 @@ button img {
     font-family: "BebasNeue";
 }
 
-.delivery div nav ul li{
+.delivery div nav ul li {
     padding-right: 0;
 }
 
-.delivery div nav ul li a{
+.delivery div nav ul li a {
     font-family: "BebasNeue";
+    text-decoration: none;
+    color: black;
 }
 
+/* Cart Menu */
 .cart-menu {
     display: none;
     position: fixed;
@@ -347,6 +364,8 @@ button img {
 .cart-header h2 {
     margin: 0;
     font-size: 1.2rem;
+    font-family: "BebasNeueBold";
+    color: #4b2f25;
 }
 
 #close-cart {
@@ -373,36 +392,44 @@ button img {
     border: none;
     color: red;
     cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .cart-total {
     padding: 10px;
     text-align: right;
     font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .cart-buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 15px;
 }
 
 .cart-buttons button {
-    background-color: #ff9800;
-    color: #fff;
+    background-color: #23ff00;
+    color: black;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
 }
 
 .cart-buttons button:hover {
-    background-color: #e64a19;
+    background-color: #13dc35;
 }
 
+.item-name {
+    font-family: 'Montserrat';
+}
 
-/* MOBILE */
+.item-price {
+    font-family: 'Courier New', Courier, monospace;
+}
 
+/* Media Queries */
 @media (max-width: 1140px) {
     header {
         display: flex;
@@ -412,24 +439,24 @@ button img {
         border-bottom: 0.5px solid #80808036;
         background-color: white;
         z-index: 100;
-        padding: 10px 0; 
+        padding: 10px 0;
     }
 
     .nav_bar {
         display: block;
         padding: 15px;
     }
-    
+
     .close {
         display: block;
     }
-    
+
     .hidden {
         display: none;
     }
 
     .logo {
-        width: 13rem; 
+        width: 13rem;
         padding: 10px 15px;
         margin: auto;
     }
@@ -443,42 +470,59 @@ button img {
     }
 
     .menu {
-        display: none; /* Initially hide the menu */
+        display: none;
         flex-direction: column;
         position: absolute;
-        top: 100%; /* Position below the header */
+        top: 100%;
         right: 0;
         background-color: #efefef;
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
         z-index: 1;
-        width: 100%; /* Make the menu full-width */
+        width: 100%;
     }
-    
+
     .menu a {
+        font-family: "montserrat";
         text-decoration: none;
         color: #333;
-        padding: 10px 0; /* Adjust the horizontal padding as needed */
+        padding: 10px 0;
         text-align: center;
-        width: 100%; /* Make the links full-width */
+        width: 100%;
         border-bottom: 1px dashed;
     }
-    
+
     .menu a:hover {
         background-color: #f0f0f0;
     }
-
 }
 
-
 @media (max-width: 600px) {
+    .maindish {
+        height: 15rem;
+    }
+
+    .maindishimg {
+        width: 80%;
+        left: 45%;
+    }
+
+    .word {
+        font-size: 3rem;
+        top: 55px;
+    }
+
+    .word2 {
+        font-size: 2rem;
+        top: 100px;
+    }
 
     .block {
         padding: 2% 5%;
     }
 
     .logo {
-        margin-left: 0; 
+        margin-left: 0;
     }
 
     .banner {
@@ -496,11 +540,22 @@ button img {
     .nav_links_delivery {
         display: none;
     }
-    
 }
 
 @media (max-width: 856px) {
     .card {
         max-width: 200px;
+    }
+}
+
+@media (min-width: 1501px) {
+    .block {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+
+    .home__container {
+        padding-left: 20%;
+        padding-right: 20%;
     }
 }

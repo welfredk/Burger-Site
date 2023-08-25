@@ -1,4 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Your existing JavaScript code
+
+    // Add a click event listener to the cart button in the header
+    const cartButton = document.querySelector(".cart-button");
+    const cartButton2 = document.querySelector(".cart");
+    const cartMenu = document.getElementById("cart-menu");
+    const closeCart = document.getElementById("close-cart");
+
+    cartButton.addEventListener("click", function () {
+        // Show the cart menu
+        cartMenu.style.display = "block";
+    });
+
+    cartButton2.addEventListener("click", function () {
+        // Show the cart menu
+        cartMenu.style.display = "block";
+    });
+
+    closeCart.addEventListener("click", function () {
+        // Hide the cart menu when the close button is clicked
+        cartMenu.style.display = "none";
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
     const navBar = document.getElementById("nav_bar");
     const close = document.getElementById("close");
     const menu = document.getElementById("menu");
@@ -41,30 +66,3 @@ hideMenuOnDesktop();
 
 // Add an event listener to window resize event
 window.addEventListener('resize', hideMenuOnDesktop);
-
-document.addEventListener("DOMContentLoaded", function () {
-    // Your existing JavaScript code
-
-    // Add a click event listener to the cart button in the header
-    const cartButton = document.querySelector(".cart-button");
-    const cartButton2 = document.querySelector(".cart");
-    const cartMenu = document.getElementById("cart-menu");
-    const closeCart = document.getElementById("close-cart");
-
-    cartButton.addEventListener("click", function () {
-        // Show the cart menu
-        cartMenu.style.display = "block";
-    });
-
-    cartButton2.addEventListener("click", function () {
-        // Show the cart menu
-        cartMenu.style.display = "block";
-    });
-
-    closeCart.addEventListener("click", function () {
-        // Hide the cart menu when the close button is clicked
-        cartMenu.style.display = "none";
-    });
-});
-
-
