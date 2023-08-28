@@ -537,16 +537,12 @@ button img {
         padding: 10px 0;
     }
 
-    .card {
-        width: 300px;
-    }
-
     .nav_links_delivery {
         display: none;
     }
 }
 
-@media (max-width: 856px) {
+@media (max-width: 856px) and (min-width: 601px) {
     .card {
         max-width: 200px;
     }
