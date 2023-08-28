@@ -537,6 +537,10 @@ button img {
         padding: 10px 0;
     }
 
+    .card {
+        max-width: 300px;
+    }
+
     .nav_links_delivery {
         display: none;
     }
